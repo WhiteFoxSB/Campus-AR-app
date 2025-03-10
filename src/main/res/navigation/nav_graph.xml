@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mapFragment">
+
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.example.arcampusnavigator.ui.map.MapFragment"
+        android:label="Map"
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapFragment_to_arNavigationFragment"
+            app:destination="@id/arNavigationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/arNavigationFragment"
+        android:name="com.example.arcampusnavigator.ui.ar.ARNavigationFragment"
+        android:label="AR Navigation"
+        tools:layout="@layout/fragment_ar_navigation">
+        <argument
+            android:name="startId"
+            app:argType="string" />
+        <argument
+            android:name="destId"
+            app:argType="string" />
+        <argument
+            android:name="isAccessible"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/notificationsFragment"
+        android:name="com.example.arcampusnavigator.ui.notifications.NotificationsFragment"
+        android:label="Notifications"
+        tools:layout="@layout/fragment_notifications" />
+
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.arcampusnavigator.ui.profile.ProfileFragment"
+        android:label="Profile"
+        tools:layout="@layout/fragment_profile" />
+
+    <fragment
+        android:id="@+id/authFragment"
+        android:name="com.example.arcampusnavigator.ui.auth.AuthFragment"
+        android:label="Auth"
+        tools:layout="@layout/fragment_auth" />
+
+</navigation>
